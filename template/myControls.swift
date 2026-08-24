@@ -111,7 +111,7 @@ struct myMultilineListItem: View {
     var labelBold: Bool = true
     
     var valueText: String = "The Value"
-    @State var valueWidth: CGFloat // zero implies screen width
+    @State var valueWidth: CGFloat = 0 // zero implies screen width
     var valueBold: Bool = false
     var valueHeight: CGFloat = 300
     var fontSize: CGFloat = G.fontSize
@@ -157,7 +157,7 @@ struct myExpandableListItem: View {
     var labelBold: Bool = true
     
     var valueText: String = "The Value"
-    @State var valueWidth: CGFloat // zero implies screen width
+    @State var valueWidth: CGFloat = 0 // zero implies screen width
     var valueBold: Bool = false
     var lineLimit: Int = 100
     var fontSize: CGFloat = G.fontSize
@@ -205,7 +205,7 @@ struct myTextField: View {
     var placeHolder: String = ""
     @State var valueWidth: CGFloat = 0 // zero implies screen width
     var limit: Int = 50 // zero implies textfield is disabled
-    var star: String = ""
+    var star: String = "*"
     var forceUpper: Bool = false
     var fontSize: CGFloat = G.fontSize
     
@@ -635,7 +635,7 @@ struct myAsyncImage: View {
     var imageUrl: String
     @State var valueWidth: CGFloat = 0 // zero implies screen width
     var imageHeight: CGFloat = 200
-    var defaultImage: String
+    var defaultImage: String = ""
     
     // ==================== USER INTERFACE  ====================
 
@@ -692,7 +692,7 @@ struct mySlider: View {
     
     @Binding var value: Double
     @State var valueWidth: CGFloat = 0 // zero implies screen width
-    var sliderWidth: CGFloat = 300
+    var sliderWidth: CGFloat = 200
     var min: Double = 0.0
     var max: Double = 10.0
         

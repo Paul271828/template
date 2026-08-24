@@ -31,8 +31,7 @@ struct ContentView: View {
         NavigationStack {
             
             VStack {
-                
-                Text("See instructions in ContentView")
+                Text("See comments in ContentView")
             }
 
             // ==================== UI MODIFIERS  ==================
