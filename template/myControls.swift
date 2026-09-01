@@ -1,17 +1,34 @@
-//
-// myButtonLabel........32
-// myListItem...........60
-// myMultiLineListItem..104
-// myExpandableListItem.150
-// myTextField..........195
-// mySecureField........259
-// myPhoneField.........373
-// myTextEditor.........423
-// myPicker.............508
-// myDatePicker.........579
-// myAsyncImage.........624
-// mySlider.............684
-// myToggleField........736
+// version2.0
+
+// ---------- myControls with default values ----------
+
+// myButtonLabel(label: "My Button", width: 120, height: 35, bodyColor: G.appColor, textColor: Color(.white), disabled: false)
+
+// myListItem(labelText: "MyLabel", labelWidth: G.labelWidth, labelBold: true, valueText: "The Value", valueWidth: 0, valueBold: false, fontSize: G.fontSize, valueColor: Color(.black))
+
+// myMultiLineListItem(labelText: "My Label", labelWidth: G.labelWidth, labelBold: true, valueText: "The Value", valueWidth: 0, valueBold: false, valueHeight: 300, fontSize: G.fontSize)
+
+// myExpandableListItem(labelText: "My Label", labelWidth: G.labelWidth, labelBold: true, valueText: "The Value", valueWidth: 0, valueBold: false, lineLimit: 100, fontSize: G.fontSize)
+
+// myTextField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, placeHolder: "", valueWidth: 0, limit: 50, star: " *", forceUpper: false, fontSize: G.fontSize)
+
+// mySecureField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, placeHolder: "", valueWidth: 0, limit: 50, star: " *", fontSize: G.fontSize)
+
+// myNumberField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, placeHolder: "", valueWidth: 0, limit: 50, includeDecimal: false, star: " *")
+
+// myPhoneField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, phoneNum: $string, placeHolder: "", valueWidth: 0, star: " *")
+
+// myTextEditor(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, valueWidth: 0, limit: 200, star: " *", disabled: false)
+
+// myPicker(label: "My Label", labelWidth: G.labelWidth, labelBold: true, selection: $string, choices: ["A","B","C"], pickerWidth: 0, pickerHeight: G.valueHeight, useSegmentedPicker: false, star: " *", disabled: false)
+
+// myDatePicker(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theDate: $date, )
+
+// myAsyncImage(label: "My Label", labelWidth: G.labelWidth, labelBold: true, imageUrl: "url", valueWidth: 0, imaheHeight: 200, defaulltImage: "")
+
+// mySlider(label: "My Label", labelWidth: G.labelWidth, labelBold: true, value: $double, valueWidth: 0, sliderWidth: 200, min: 0.0, max: 10.0)
+
+// myToggleField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $bool, valueWidth: 0)
 
 import SwiftUI
 //import iPhoneNumberField
@@ -22,7 +39,7 @@ import Combine
 struct G {
 // -----------------------------------------------
     static var appColor = Color(.blue)
-    static var labelWidth: CGFloat = 120
+    static var labelWidth: CGFloat = 130
     static var valueHeight: CGFloat = 35
     static var fontSize: CGFloat = 18
     static var smallFontSize: CGFloat = 15
@@ -205,7 +222,7 @@ struct myTextField: View {
     var placeHolder: String = ""
     @State var valueWidth: CGFloat = 0 // zero implies screen width
     var limit: Int = 50 // zero implies textfield is disabled
-    var star: String = "*"
+    var star: String = " *"
     var forceUpper: Bool = false
     var fontSize: CGFloat = G.fontSize
     
@@ -266,10 +283,10 @@ struct mySecureField: View {
     var labelBold: Bool = true
     
     @Binding var theValue: String
-    @State var placeHolder: String = ""
+    var placeHolder: String = ""
     @State var valueWidth: CGFloat = 0 // zero implies screen width
     var limit: Int = 50
-    var star: String = "*"
+    var star: String = " *"
     var fontSize: CGFloat = G.fontSize
     
     // ==================== USER INTERFACE  ====================
@@ -327,7 +344,7 @@ struct myNumberField: View {
     @State var valueWidth: CGFloat = 0 // zero implies screen width
     var limit: Int = 50
     var includeDecimal: Bool = false
-    var star: String = "*"
+    var star: String = " *"
     
     // ==================== USER INTERFACE  ====================
 
@@ -369,26 +386,27 @@ struct myNumberField: View {
     }
 }
 
-//// -----------------------------------------------
-//struct myPhoneField: View {
-//// -----------------------------------------------
-//
-//    // this control requires the iPhoneNumberField package
-//    
-//    // ================= VARIABLE DEFINITIONS  =================
-//
+// -----------------------------------------------
+struct myPhoneField: View {
+// -----------------------------------------------
+
+    // this control requires the iPhoneNumberField package
+    
+    // ================= VARIABLE DEFINITIONS  =================
+
 //    var label: String = "My Label"
 //    var labelWidth: CGFloat = G.labelWidth
 //    var labelBold: Bool = true
 //
 //    @Binding var phoneNum: String
+//    @State var placeHolder: String = ""
 //    @State var valueWidth: CGFloat = 0 // zero implies screen width
-//    var star: String = "*"
-//    
-//    // ==================== USER INTERFACE  ====================
-//
-//    var body: some View {
-//        
+//    var star: String = " *"
+    
+    // ==================== USER INTERFACE  ====================
+
+    var body: some View {
+        
 //        HStack (spacing: 0) {
 //             
 //             Text("\(label): ")
@@ -396,14 +414,17 @@ struct myNumberField: View {
 //                 .foregroundColor(G.appColor)
 //                 .fontWeight(labelBold ? .bold : .regular)
 //
-//             iPhoneNumberField("", text: $phoneNum)
-//                 .flagHidden(false)
+//             iPhoneNumberField(placeHolder, text: $phoneNum)
+//                 .flagHidden(true)
+//                 .maximumDigits(10)
+//                 .padding(7)
 //                 .frame(width: valueWidth, height: G.valueHeight)
 //                 .textFieldStyle(.roundedBorder)
 //                 .overlay(RoundedRectangle(cornerRadius:10.0)
 //                    .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))
 //                 .foregroundColor(.black)
 //                 .font(.system(size: G.fontSize))
+//                 
 //                 
 //             Text(star)
 //                 .foregroundColor(.red)
@@ -416,8 +437,8 @@ struct myNumberField: View {
 //        .onAppear {
 //            valueWidth = valueWidth == 0 ? UIScreen.main.bounds.size.width - labelWidth - 20 : valueWidth - 20
 //        }
-//    }
-//}
+    }
+}
 
 // -----------------------------------------------
 struct myTextEditor: View {
@@ -433,7 +454,7 @@ struct myTextEditor: View {
     @State var valueWidth: CGFloat = 0 // zero implies screen width
     var valueHeight: CGFloat = G.valueHeight
     var limit: Int = 200
-    var star: String = "*"
+    var star: String = " *"
     var disabled: Bool = false
     
     @FocusState private var responseIsFocused: Bool
@@ -515,11 +536,11 @@ struct myPicker: View {
     var labelBold: Bool = true
     
     @Binding var selection: String
-    var choices: [String] = ["Choice 1", "Choice 2", "Choice 3"]
+    var choices: [String] = ["A", "B", "C"]
     @State var pickerWidth: CGFloat = 0  // zero implies screen width
     @State var pickerHeight: CGFloat = G.valueHeight
     @State var useSegmentedPicker: Bool = false
-    var star: String = "*"
+    var star: String = " *"
     var disabled: Bool = false
 
     // ==================== USER INTERFACE  ====================
@@ -743,7 +764,6 @@ struct myToggleField: View {
     var labelBold: Bool = true
     
     @Binding var theValue: Bool
-    @State var placeHolder: String = ""
     @State var valueWidth: CGFloat = 0 // zero implies screen width
     
     // ==================== USER INTERFACE  ====================

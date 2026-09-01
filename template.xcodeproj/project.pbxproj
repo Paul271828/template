@@ -8,19 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		4C7B5E8A3034E21F00287670 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 4C7B5E893034E21F00287670 /* iPhoneNumberField */; };
+		4C8E14D33044BF8B00FA56C8 /* EmailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E14C83044BF8B00FA56C8 /* EmailHelper.swift */; };
+		4C8E14D43044BF8B00FA56C8 /* NumbersOnlyViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E14C93044BF8B00FA56C8 /* NumbersOnlyViewModifier.swift */; };
+		4C8E14D53044BF8B00FA56C8 /* radioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E14CA3044BF8B00FA56C8 /* radioButton.swift */; };
+		4C8E14D63044BF8B00FA56C8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E14CB3044BF8B00FA56C8 /* WebView.swift */; };
+		4C8E14D73044BF8B00FA56C8 /* template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E14CE3044BF8B00FA56C8 /* template.swift */; };
+		4C8E14DA3044BF8B00FA56C8 /* templateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E14D13044BF8B00FA56C8 /* templateApp.swift */; };
+		4C8E14DB3044BF8B00FA56C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8E14CD3044BF8B00FA56C8 /* Assets.xcassets */; };
+		4C9D46B33047746F003B5701 /* SubViewTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D46B23047746F003B5701 /* SubViewTemplate.swift */; };
+		4C9D46CE30478269003B5701 /* myControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D46CD30478269003B5701 /* myControls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C7B5E613034C6B000287670 /* template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = template.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C8E14C83044BF8B00FA56C8 /* EmailHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailHelper.swift; sourceTree = "<group>"; };
+		4C8E14C93044BF8B00FA56C8 /* NumbersOnlyViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersOnlyViewModifier.swift; sourceTree = "<group>"; };
+		4C8E14CA3044BF8B00FA56C8 /* radioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = radioButton.swift; sourceTree = "<group>"; };
+		4C8E14CB3044BF8B00FA56C8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		4C8E14CD3044BF8B00FA56C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C8E14CE3044BF8B00FA56C8 /* template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = template.swift; sourceTree = "<group>"; };
+		4C8E14D13044BF8B00FA56C8 /* templateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = templateApp.swift; sourceTree = "<group>"; };
+		4C9D46B23047746F003B5701 /* SubViewTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewTemplate.swift; sourceTree = "<group>"; };
+		4C9D46CD30478269003B5701 /* myControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myControls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		4C7B5E633034C6B000287670 /* template */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = template;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4C7B5E5E3034C6B000287670 /* Frameworks */ = {
@@ -37,7 +47,7 @@
 		4C7B5E583034C6B000287670 = {
 			isa = PBXGroup;
 			children = (
-				4C7B5E633034C6B000287670 /* template */,
+				4C8E14D23044BF8B00FA56C8 /* template */,
 				4C7B5E623034C6B000287670 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +58,30 @@
 				4C7B5E613034C6B000287670 /* template.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4C8E14CC3044BF8B00FA56C8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4C8E14C83044BF8B00FA56C8 /* EmailHelper.swift */,
+				4C8E14C93044BF8B00FA56C8 /* NumbersOnlyViewModifier.swift */,
+				4C8E14CA3044BF8B00FA56C8 /* radioButton.swift */,
+				4C8E14CB3044BF8B00FA56C8 /* WebView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4C8E14D23044BF8B00FA56C8 /* template */ = {
+			isa = PBXGroup;
+			children = (
+				4C8E14CE3044BF8B00FA56C8 /* template.swift */,
+				4C9D46B23047746F003B5701 /* SubViewTemplate.swift */,
+				4C9D46CD30478269003B5701 /* myControls.swift */,
+				4C8E14D13044BF8B00FA56C8 /* templateApp.swift */,
+				4C8E14CC3044BF8B00FA56C8 /* Helpers */,
+				4C8E14CD3044BF8B00FA56C8 /* Assets.xcassets */,
+			);
+			path = template;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -64,9 +98,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				4C7B5E633034C6B000287670 /* template */,
 			);
 			name = template;
 			packageProductDependencies = (
@@ -118,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8E14DB3044BF8B00FA56C8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +160,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C8E14D33044BF8B00FA56C8 /* EmailHelper.swift in Sources */,
+				4C9D46B33047746F003B5701 /* SubViewTemplate.swift in Sources */,
+				4C8E14D43044BF8B00FA56C8 /* NumbersOnlyViewModifier.swift in Sources */,
+				4C8E14D53044BF8B00FA56C8 /* radioButton.swift in Sources */,
+				4C8E14D63044BF8B00FA56C8 /* WebView.swift in Sources */,
+				4C9D46CE30478269003B5701 /* myControls.swift in Sources */,
+				4C8E14D73044BF8B00FA56C8 /* template.swift in Sources */,
+				4C8E14DA3044BF8B00FA56C8 /* templateApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
