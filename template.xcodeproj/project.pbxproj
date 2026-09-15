@@ -16,7 +16,7 @@
 		4C8E14DA3044BF8B00FA56C8 /* templateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8E14D13044BF8B00FA56C8 /* templateApp.swift */; };
 		4C8E14DB3044BF8B00FA56C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8E14CD3044BF8B00FA56C8 /* Assets.xcassets */; };
 		4C9D46B33047746F003B5701 /* SubViewTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D46B23047746F003B5701 /* SubViewTemplate.swift */; };
-		4C9D46CE30478269003B5701 /* myControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D46CD30478269003B5701 /* myControls.swift */; };
+		4CFE68343059C5B2005341ED /* myControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFE68333059C5B2005341ED /* myControls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		4C8E14CE3044BF8B00FA56C8 /* template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = template.swift; sourceTree = "<group>"; };
 		4C8E14D13044BF8B00FA56C8 /* templateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = templateApp.swift; sourceTree = "<group>"; };
 		4C9D46B23047746F003B5701 /* SubViewTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewTemplate.swift; sourceTree = "<group>"; };
-		4C9D46CD30478269003B5701 /* myControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myControls.swift; sourceTree = "<group>"; };
+		4CFE68333059C5B2005341ED /* myControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myControls.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +76,8 @@
 			children = (
 				4C8E14CE3044BF8B00FA56C8 /* template.swift */,
 				4C9D46B23047746F003B5701 /* SubViewTemplate.swift */,
-				4C9D46CD30478269003B5701 /* myControls.swift */,
 				4C8E14D13044BF8B00FA56C8 /* templateApp.swift */,
+				4CFE68333059C5B2005341ED /* myControls.swift */,
 				4C8E14CC3044BF8B00FA56C8 /* Helpers */,
 				4C8E14CD3044BF8B00FA56C8 /* Assets.xcassets */,
 			);
@@ -165,7 +165,7 @@
 				4C8E14D43044BF8B00FA56C8 /* NumbersOnlyViewModifier.swift in Sources */,
 				4C8E14D53044BF8B00FA56C8 /* radioButton.swift in Sources */,
 				4C8E14D63044BF8B00FA56C8 /* WebView.swift in Sources */,
-				4C9D46CE30478269003B5701 /* myControls.swift in Sources */,
+				4CFE68343059C5B2005341ED /* myControls.swift in Sources */,
 				4C8E14D73044BF8B00FA56C8 /* template.swift in Sources */,
 				4C8E14DA3044BF8B00FA56C8 /* templateApp.swift in Sources */,
 			);

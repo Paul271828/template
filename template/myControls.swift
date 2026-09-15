@@ -1,37 +1,44 @@
-// version2.0
+/* version 2.0
 
-// ---------- myControls with default values ----------
+---------- myControls with default values ----------
 
-// myButtonLabel(label: "My Button", width: 120, height: 35, bodyColor: G.appColor, textColor: Color(.white), disabled: false)
+myButtonLabel(label: "My Button", width: 120, height: 35, bodyColor: G.appColor, textColor: Color(.white), disabled: false)
 
-// myListItem(labelText: "MyLabel", labelWidth: G.labelWidth, labelBold: true, valueText: "The Value", valueWidth: 0, valueBold: false, fontSize: G.fontSize, valueColor: Color(.black))
+myListItem(labelText: "MyLabel", labelWidth: G.labelWidth, labelBold: true, valueText: "The Value", valueWidth: 0, valueBold: false, fontSize: G.fontSize, valueColor: Color(.black))
 
-// myMultiLineListItem(labelText: "My Label", labelWidth: G.labelWidth, labelBold: true, valueText: "The Value", valueWidth: 0, valueBold: false, valueHeight: 300, fontSize: G.fontSize)
+myMultiLineListItem(labelText: "My Label", labelWidth: G.labelWidth, labelBold: true, valueText: "The Value", valueWidth: 0, valueBold: false, valueHeight: 300, fontSize: G.fontSize)
 
-// myExpandableListItem(labelText: "My Label", labelWidth: G.labelWidth, labelBold: true, valueText: "The Value", valueWidth: 0, valueBold: false, lineLimit: 100, fontSize: G.fontSize)
+myExpandableListItem(labelText: "My Label", labelWidth: G.labelWidth, labelBold: true, valueText: "The Value", valueWidth: 0, valueBold: false, lineLimit: 100, fontSize: G.fontSize)
 
-// myTextField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, placeHolder: "", valueWidth: 0, limit: 50, star: " *", forceUpper: false, fontSize: G.fontSize)
+myTextField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, placeHolder: "", valueWidth: 0, limit: 50, star: " *", forceUpper: false, fontSize: G.fontSize)
 
-// mySecureField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, placeHolder: "", valueWidth: 0, limit: 50, star: " *", fontSize: G.fontSize)
+mySecureField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, placeHolder: "", valueWidth: 0, limit: 50, star: " *", fontSize: G.fontSize)
 
-// myNumberField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, placeHolder: "", valueWidth: 0, limit: 50, includeDecimal: false, star: " *")
+myNumberField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, placeHolder: "", valueWidth: 0, limit: 50, includeDecimal: false, star: " *")
 
-// myPhoneField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, phoneNum: $string, placeHolder: "", valueWidth: 0, star: " *")
+myPhoneField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, phoneNum: $string, placeHolder: "", valueWidth: 0, star: " *")
 
-// myTextEditor(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, valueWidth: 0, limit: 200, star: " *", disabled: false)
+myTextEditor(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $string, valueWidth: 0, limit: 200, star: " *", disabled: false)
 
-// myPicker(label: "My Label", labelWidth: G.labelWidth, labelBold: true, selection: $string, choices: ["A","B","C"], pickerWidth: 0, pickerHeight: G.valueHeight, useSegmentedPicker: false, star: " *", disabled: false)
+myPicker(label: "My Label", labelWidth: G.labelWidth, labelBold: true, selection: $string, choices: ["A","B","C"], pickerWidth: 0, pickerHeight: G.valueHeight, useSegmentedPicker: false, star: " *", disabled: false)
 
-// myDatePicker(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theDate: $date, )
+myDatePicker(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theDate: $date, )
 
-// myAsyncImage(label: "My Label", labelWidth: G.labelWidth, labelBold: true, imageUrl: "url", valueWidth: 0, imaheHeight: 200, defaulltImage: "")
+myAsyncImage(label: "My Label", labelWidth: G.labelWidth, labelBold: true, imageUrl: "url", valueWidth: 0, imaheHeight: 200, defaulltImage: "")
 
-// mySlider(label: "My Label", labelWidth: G.labelWidth, labelBold: true, value: $double, valueWidth: 0, sliderWidth: 200, min: 0.0, max: 10.0)
+mySlider(label: "My Label", labelWidth: G.labelWidth, labelBold: true, value: $double, valueWidth: 0, sliderWidth: 200, min: 0.0, max: 10.0)
 
-// myToggleField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $bool, valueWidth: 0)
+myToggleField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $bool, valueWidth: 0, onColor: Color(.green))
+
+myCheckboxGroup(label: "My Label", labelBold: true, orientation: "horizontal", boxLabels: ["Box 1","Box 2","Box 3"], boxValue: $[Bool])
+
+myRadiobuttonGroup(label: "My Label", labelBold: true, orientation: "horizontal", buttonLabels: ["Button 1","Button 2","Button 3"], buttonValue: $String, showClear: true)
+ 
+myEmailField(label: "My Label", labelWidth: G.labelWidth, labelBold: true, theValue: $String, placeHolder: "", valueWidth: 0, limit: 50, star: " *", fontSize: G.fontSize)
+*/
 
 import SwiftUI
-//import iPhoneNumberField
+import iPhoneNumberField
 import PhotosUI
 import Combine
 
@@ -157,7 +164,7 @@ struct myMultilineListItem: View {
         // ==================== UI MODIFIERS  ==================
 
         .onAppear {
-            valueWidth = valueWidth == 0 ? UIScreen.main.bounds.size.width - labelWidth : valueWidth
+            valueWidth = valueWidth == 0 ? UIScreen.main.bounds.size.width - labelWidth - 10 : valueWidth
         }
 
     }
@@ -202,7 +209,7 @@ struct myExpandableListItem: View {
         // ==================== UI MODIFIERS  ==================
 
         .onAppear {
-            valueWidth = valueWidth == 0 ? UIScreen.main.bounds.size.width - labelWidth : valueWidth
+            valueWidth = valueWidth == 0 ? UIScreen.main.bounds.size.width - labelWidth - 10 : valueWidth
         }
 
     }
@@ -331,7 +338,12 @@ struct mySecureField: View {
 struct myNumberField: View {
 // -----------------------------------------------
 
-    // this control needs the numbersOnlyViewModifier
+    /*                      NOTA BENE
+    ===========================================================
+    ===  THIS CONTROL REQUIRES THE numbersOnlyViewModifier  ===
+    ===           (it's in the Helpers folder)              ===
+    ===========================================================
+    */
 
     // ================= VARIABLE DEFINITIONS  =================
 
@@ -389,54 +401,59 @@ struct myNumberField: View {
 // -----------------------------------------------
 struct myPhoneField: View {
 // -----------------------------------------------
-
-    // this control requires the iPhoneNumberField package
+    
+    /*                      NOTA BENE
+    ===========================================================
+    === THIS CONTROL REQUIRES THE iPhoneNumberField PACKAGE ===
+    ===========================================================
+    */
     
     // ================= VARIABLE DEFINITIONS  =================
 
-//    var label: String = "My Label"
-//    var labelWidth: CGFloat = G.labelWidth
-//    var labelBold: Bool = true
-//
-//    @Binding var phoneNum: String
-//    @State var placeHolder: String = ""
-//    @State var valueWidth: CGFloat = 0 // zero implies screen width
-//    var star: String = " *"
+    var label: String = "My Label"
+    var labelWidth: CGFloat = G.labelWidth
+    var labelBold: Bool = true
+
+    @Binding var phoneNum: String
+    @State var placeHolder: String = ""
+    @State var valueWidth: CGFloat = 0 // zero implies screen width
+    var star: String = " *"
     
     // ==================== USER INTERFACE  ====================
 
     var body: some View {
+/*
+        HStack (spacing: 0) {
+             
+             Text("\(label): ")
+                 .frame(width: labelWidth, alignment: .trailing)
+                 .foregroundColor(G.appColor)
+                 .fontWeight(labelBold ? .bold : .regular)
+
+             iPhoneNumberField(placeHolder, text: $phoneNum)
+                 .flagHidden(true)
+                 .maximumDigits(10)
+                 .padding(7)
+                 .frame(width: valueWidth, height: G.valueHeight)
+                 .textFieldStyle(.roundedBorder)
+                 .overlay(RoundedRectangle(cornerRadius:10.0)
+                    .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))
+                 .foregroundColor(.black)
+                 .font(.system(size: G.fontSize))
+                 
+                 
+             Text(star)
+                 .foregroundColor(.red)
+                 .font(.system(size:G.fontSize))
+                 .frame(width: 25, alignment: .leading)
+         }
         
-//        HStack (spacing: 0) {
-//             
-//             Text("\(label): ")
-//                 .frame(width: labelWidth, alignment: .trailing)
-//                 .foregroundColor(G.appColor)
-//                 .fontWeight(labelBold ? .bold : .regular)
-//
-//             iPhoneNumberField(placeHolder, text: $phoneNum)
-//                 .flagHidden(true)
-//                 .maximumDigits(10)
-//                 .padding(7)
-//                 .frame(width: valueWidth, height: G.valueHeight)
-//                 .textFieldStyle(.roundedBorder)
-//                 .overlay(RoundedRectangle(cornerRadius:10.0)
-//                    .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1.0)))
-//                 .foregroundColor(.black)
-//                 .font(.system(size: G.fontSize))
-//                 
-//                 
-//             Text(star)
-//                 .foregroundColor(.red)
-//                 .font(.system(size:G.fontSize))
-//                 .frame(width: 25, alignment: .leading)
-//         }
-//        
-//        // ==================== UI MODIFIERS  ==================
-//
-//        .onAppear {
-//            valueWidth = valueWidth == 0 ? UIScreen.main.bounds.size.width - labelWidth - 20 : valueWidth - 20
-//        }
+        // ==================== UI MODIFIERS  ==================
+
+        .onAppear {
+            valueWidth = valueWidth == 0 ? UIScreen.main.bounds.size.width - labelWidth - 20 : valueWidth - 20
+        }
+*/
     }
 }
 
@@ -480,12 +497,12 @@ struct myTextEditor: View {
                     .foregroundColor(disabled ? Color.gray : Color.black)
                     .font(.system(size: G.smallFontSize))
                     .focused($responseIsFocused)
-                    .onReceive(theValue.publisher.last()) {
-                        if ($0 as Character).asciiValue == 10 { // ASCII 10 = newline
-                            responseIsFocused = false // unfocus TextEditor to dismiss keyboard
-                            theValue.removeLast() // remove newline at end to prevent retriggering...
-                        }
-                    }
+//                    .onReceive(theValue.publisher.last()) {
+//                        if ($0 as Character).asciiValue == 10 { // ASCII 10 = newline
+//                            responseIsFocused = false // unfocus TextEditor to dismiss keyboard
+//                            theValue.removeLast() // remove newline at end to prevent retriggering...
+//                        }
+//                    }
                 if !theValue.isEmpty && !disabled {
                     Button(action: {
                         theValue = ""
@@ -548,11 +565,13 @@ struct myPicker: View {
     var body: some View {
         
         HStack (spacing: 0) {
+            
             Text("\(label): ")
                 .frame(width: labelWidth, alignment: .trailing)
                 .font(.system(size: G.fontSize))
                 .foregroundColor(G.appColor)
                 .fontWeight(labelBold ? .bold : .regular)
+            
             if useSegmentedPicker {
                 Picker("", selection: $selection) {
                     ForEach(choices, id:\.self) { choice in
@@ -565,7 +584,6 @@ struct myPicker: View {
                 .accentColor(.black)
                 .font(.system(size: G.fontSize))
                 .frame(width: pickerWidth, height: pickerHeight, alignment: .leading)
-                .overlay(RoundedRectangle(cornerRadius:10) .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1)))
             } else {
                 Picker("", selection: $selection) {
                     ForEach(choices, id:\.self) { choice in
@@ -765,6 +783,7 @@ struct myToggleField: View {
     
     @Binding var theValue: Bool
     @State var valueWidth: CGFloat = 0 // zero implies screen width
+    var onColor: Color = .green
     
     // ==================== USER INTERFACE  ====================
 
@@ -781,6 +800,7 @@ struct myToggleField: View {
             Toggle("", isOn: $theValue )
                 .frame(width: 50)
                 .frame(width: valueWidth, height: G.valueHeight, alignment: .leading)
+                .tint(onColor)
             
             Text("")
                 .foregroundColor(.red)
@@ -794,4 +814,242 @@ struct myToggleField: View {
             valueWidth = valueWidth == 0 ? UIScreen.main.bounds.size.width - labelWidth - 5 : valueWidth - 5
         }
     }
+}
+
+// ---------------------------------------------------------------------------------------
+struct myCheckboxGroup: View {
+// ---------------------------------------------------------------------------------------
+
+    //============================== VARIABLE DECLARATIONS ==============================
+
+    var label: String = "Check Boxes"
+    var labelBold: Bool = true
+
+    var orientation: String = "horizontal"
+    var boxLabels: [String] = ["Box 1", "Box 2", "Box 3"]
+    @Binding var boxValues: [Bool]
+
+    // ================================ THE USER INTERFACE ================================
+
+    var body: some View {
+
+        VStack {
+            
+            if !label.isEmpty {
+                Text("\(label): ")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .font(.system(size: G.fontSize))
+                    .foregroundColor(G.appColor)
+                    .fontWeight(labelBold ? .bold : .regular)
+                    .padding(.leading, 20)
+            }
+            
+            if orientation == "horizontal" {
+                
+                HStack {
+                    
+                    ForEach(boxLabels.indices, id: \.self) { i in
+                        HStack (spacing:2) {
+                            Image(systemName: boxValues[i] ? "checkmark.square" : "square")
+                            Text(boxLabels[i])
+                        }
+                        .onTapGesture {
+                            boxValues[i].toggle()
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 30)
+
+            } else {
+                
+                VStack (alignment: .leading) {
+                    
+                    ForEach(boxLabels.indices, id: \.self) { i in
+                        HStack (spacing:2) {
+                            Image(systemName: boxValues[i] ? "checkmark.square" : "square")
+                            Text(boxLabels[i])
+                        }
+                        .padding(.leading, 30)
+                        .onTapGesture {
+                            boxValues[i].toggle()
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            }
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------------------
+struct myRadioButtonGroup: View {
+// ---------------------------------------------------------------------------------------
+
+    //============================== VARIABLE DECLARATIONS ==============================
+
+    var label: String = "Radio Buttons"
+    var labelBold: Bool = true
+
+    var orientation: String = "horizontal"
+    var buttonLabels: [String] = ["Button 1", "Button 2", "Button 3"]
+    @Binding var buttonValue: String
+    var showClear: Bool = true
+
+    // ================================ THE USER INTERFACE ================================
+
+    var body: some View {
+
+        VStack(alignment: .leading, spacing: 0) {
+            
+            HStack {
+                if !label.isEmpty {
+                    Text("\(label): ")
+                        .font(.system(size: G.fontSize))
+                        .foregroundColor(G.appColor)
+                        .fontWeight(labelBold ? .bold : .regular)
+                        .padding(.leading, 20)
+                }
+                
+                if showClear {
+                    Button {
+                        buttonValue = ""
+                    } label: {
+                        myButtonLabel(label: "Clear", width: 70, height: 20, bodyColor: Color(.systemGray3), textColor: .white)
+                    }
+                }
+            }
+            
+            if orientation == "horizontal" {
+                
+                HStack {
+                    
+                    ForEach(buttonLabels.indices, id: \.self) { i in
+                        HStack (spacing:2) {
+                            Image(systemName: buttonValue == buttonLabels[i] ? "largecircle.fill.circle" : "circle")
+                            Text(buttonLabels[i])
+                        }
+                        .onTapGesture {
+                            buttonValue = buttonLabels[i]
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 30)
+                
+            } else {
+                
+                VStack {
+                    
+                    ForEach(buttonLabels.indices, id: \.self) { i in
+                        HStack (spacing:2) {
+                            Image(systemName: buttonValue == buttonLabels[i] ? "largecircle.fill.circle" : "circle")
+                            Text(buttonLabels[i])
+                        }
+                        .onTapGesture {
+                            buttonValue = buttonLabels[i]
+                        }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, 30)
+
+            }
+        }
+    }
+}
+
+// -----------------------------------------------
+struct myEmailField: View {
+// -----------------------------------------------
+    
+    // ================= VARIABLE DEFINITIONS  =================
+    
+    var label: String = "My Label"
+    var labelWidth: CGFloat = G.labelWidth
+    var labelBold: Bool = true
+    
+    @Binding var theValue: String
+    var placeHolder: String = ""
+    @State var valueWidth: CGFloat = 0 // zero implies screen width
+    var limit: Int = 50 // zero implies textfield is disabled
+    var star: String = " *"
+    var fontSize: CGFloat = G.fontSize
+    
+    @FocusState private var isEmailFocused: Bool
+    
+    // ==================== USER INTERFACE  ====================
+    
+    var body: some View {
+        
+        HStack (spacing: 0) {
+            
+            Text("\(label): ")
+                .frame(width: labelWidth, alignment: .trailing)
+                .font(.system(size: fontSize))
+                .foregroundColor(G.appColor)
+                .fontWeight(labelBold ? .bold : .regular)
+            
+            TextField(placeHolder, text: $theValue )
+                .frame(width: valueWidth, height: G.valueHeight)
+                .textFieldStyle(.roundedBorder)
+                .overlay(RoundedRectangle(cornerRadius:10) .strokeBorder(Color.gray, style: StrokeStyle(lineWidth: 1)))
+                .font(.system(size: G.fontSize))
+                .foregroundColor(limit == 0 ? .gray : .black)
+                .disabled(limit == 0 ? true : false)
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
+                .focused($isEmailFocused)
+                .onSubmit {
+                    validateEmail()
+                }
+                .onChange(of: isEmailFocused) { _, isFocused in
+                    if !isFocused {
+                        validateEmail()
+                    }
+                }
+
+            Text(star)
+                .foregroundColor(.red)
+                .font(.system(size:G.fontSize))
+                .frame(width: 25, alignment: .leading)
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            isEmailFocused = false
+        }
+
+        
+        // ==================== UI MODIFIERS  ==================
+        
+        .onChange(of: theValue) {
+            if theValue.count > 0 && "\\#&|".contains(theValue.last!) {
+                theValue.removeLast()
+            }
+            if limit > 0 {
+                if theValue.count > limit {
+                    theValue = String(theValue.prefix(limit))
+                }
+            }
+        }
+        
+        .onAppear {
+            valueWidth = valueWidth == 0 ? UIScreen.main.bounds.size.width - labelWidth - 20 : valueWidth - 20
+        }
+    }
+    
+    // ==================== FUNCTIONS  ====================
+    
+   func validateEmail() {
+        if theValue.count > 100 {
+            theValue = ""
+        }
+        let emailFormat = "(?:[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}" + "~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\" + "x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[\\p{L}0-9](?:[a-" + "z0-9-]*[\\p{L}0-9])?\\.)+[\\p{L}0-9](?:[\\p{L}0-9-]*[\\p{L}0-9])?|\\[(?:(?:25[0-5" + "]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-" + "9][0-9]?|[\\p{L}0-9-]*[\\p{L}0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21" + "-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        if !emailPredicate.evaluate(with: theValue) {
+           theValue = ""
+        }
+    }
+
 }
